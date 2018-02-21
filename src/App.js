@@ -10,45 +10,12 @@ import {
   Route
 } from 'react-router-dom'
 
-const data = [
-  {
-    name: 'High Top Sneaker',
-    price: 15,
-    picture: './../public/imgs/shoe3.png',
-    type: 'shoe',
-    key: 1
-  },
-  {
-    name: 'High Top Hats',
-    price: 10,
-    picture: './../public/imgs/shoe3.png',
-    type: 'hat',
-    key: 2
-  },
-  {
-    name: 'High hils',
-    price: 40,
-    picture: './../public/imgs/shoe3.png',
-    type: 'shoe',
-    key: 3
-  },
-  {
-    name: 'Sport Cap',
-    price: 20,
-    picture: './../public/imgs/shoe3.png',
-    type: 'hat',
-    key: 4
-  }
-]
-
-
-
-
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      data:[],
       shoes: [],
       hats: [],
       cart: [],
@@ -56,20 +23,27 @@ export default class App extends Component {
       username: ''
     }
     this.apiUrl = 'http://localhost:8080/cart'
+    this.data = 'http://localhost:8080/data'
   }
 
 
-  componentDidMount() {
-    let Shoes = data.filter((shoes) => {
-      return shoes.type === 'shoe'
+  componentWillMount() {
+
+    axios.get(this.data)
+    .then((res) => {
+      let Shoes = res.data.filter((shoes) => {
+        return shoes.type === 'shoe'
+      })
+      let Hats = res.data.filter((hats) => {
+        return hats.type === 'hat'
+      })
+      this.setState({
+        data:res.data,
+        shoes: Shoes,
+        hats: Hats
+      })
     })
-    let Hats = data.filter((hats) => {
-      return hats.type === 'hat'
-    })
-    this.setState({
-      shoes: Shoes,
-      hats: Hats
-    })
+   
 
     axios.get(this.apiUrl)
       .then((res) => {
@@ -90,17 +64,15 @@ export default class App extends Component {
   }
 
 
-  addShop(art) {
-    const product = data.find((item) => {
+  addShop(art, input) {
+    const product = this.state.data.find((item) => {
       return item.key === art.key
     })
-
-    axios.post(this.apiUrl, { product, quantity: 1, subtotal: product.price })
+    axios.post(this.apiUrl, { product, quantity: input, subtotal: product.price * Number(input) })
       .then((res) => {
         let Total = res.data.reduce((memo, val) => {
           return memo += val.subtotal;
         }, 0);
-
 
         this.setState({
           cart: res.data,
@@ -158,10 +130,11 @@ export default class App extends Component {
         <Route path="/Shop" render={(routeProps) =>
           <Shop
             {...routeProps}
+            getSubTotal={this.getSubTotal.bind(this)}
             shoes={this.state.shoes}
             hats={this.state.hats}
             addShop={this.addShop.bind(this)}
-            data={data}
+            data={this.state.data}
             username={this.state.username} />
         } />
         <Route path="/cart" render={() =>

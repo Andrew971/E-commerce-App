@@ -21,7 +21,7 @@ router.post('/', jsonParser, (req, res, body) => {
     } else {
         cart.forEach((item) => {
             if (data.product.key == item.product.key) {
-                item.quantity = item.quantity + 1
+                item.quantity = Number(item.quantity) + Number(data.quantity)  
                 item.subtotal = item.product.price * Number(item.quantity)
                 flag = true
             }

@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 const port = process.argv[2] || 8080
-
-const cartRouter = require('./Routes/cart')
+const Cart = require('./Routes/cart')
+const Data = require('./Routes/data')
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -14,7 +14,9 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use('/cart', cartRouter)
+app.use('/cart', Cart)
+app.use('/data', Data)
+
 
 
   

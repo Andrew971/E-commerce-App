@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Shoes from './ShopComponents/Shoes'
 import Hats from './ShopComponents/Hats'
 import ShopList from './ShopComponents/ShopList'
+import SingleProduct from './ShopComponents/SingleProduct'
 
 import {
   Route,
@@ -12,13 +13,7 @@ import {
 
 
 export default class Shop extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      shoes: this.props.shoes,
-      hats: this.props.hats
-    }
-  }
+
 
 
   render() {
@@ -37,13 +32,19 @@ export default class Shop extends Component {
             <Route path={match.url + '/hats'} render={() =>
               <Hats 
               {...this.props}
-              hats={this.state.hats}  />
+              />
             } />
 
             <Route path={match.url + '/shoes'} render={() =>
               <Shoes 
               {...this.props}
-              shoes={this.state.shoes}  />
+               />
+            } />
+
+            <Route path={match.url + '/:item'} render={() =>
+              <SingleProduct 
+              {...this.props}
+               />
             } />
           </Switch>
           

@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
 import img from '../../../Assets/img/beat-solo-2.png'
+import {
+    Link
+} from 'react-router-dom'
 
 export default class ShopList extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            data: props.data
-        }
-    }
 
 
     render() {
-        const List = this.state.data.map((list) => {
+        const List = this.props.data.map((list) => {
+            let input
             return (<div key={list.key} className="col-4 col-md-4 col-lg-3" align="center">
 
                 <li className="media">
-                    <img className="img" src={img} alt={list.name} />
+                    <Link to={'/' + list.key}><img className="img" src={img} alt={list.name} /></Link>
 
                     <div className="media-body">
                         {list.name}
                     </div>
-                    <button onClick={() => { this.props.addShop(list) }} className="btn btn-success">Add to cart</button>
+                    <input type="number" className="form-control" ref={type => {
+                        input = type;
+                    }} onChange={(e) => {
+                        e.preventDefault();
+                    }} defaultValue="1" />
+                    <button onClick={() => { this.props.addShop(list, input.value) }} className="btn btn-success">Add to cart</button>
                 </li>
             </div>
             );
@@ -28,7 +31,7 @@ export default class ShopList extends Component {
         return (
             <main className="container-fluid">
                 <div align="center">
-                    <h1>+ My Shoplist page</h1><br />
+                    <br />
                     <div className="row">
                         <ul className="list-unstyled">
                             {List}
