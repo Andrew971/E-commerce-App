@@ -1,0 +1,53 @@
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+
+.actions .btn{
+    margin:1.5em ;
+} 
+
+.actions .btn-info{
+    display:inline-block;
+}
+.actions .btn-danger{
+    display:inline-block;
+}
+
+
+.btn-block {
+    width: 87%;
+}
+
+@media screen and (max-width: 1000px) {
+    tabletbody td .form-control{
+		display: inline !important;
+	}
+	.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+	}
+    
+    .btn-block {
+        width: 93%;
+    }
+	.actions .btn-info{
+		float:left;
+	}
+	.actions .btn-danger{
+		float:right;
+	}
+	
+	table thead { display: none; }
+	table tbody td { display: block; padding: .6rem; min-width:320px;}
+	table tbody tr td:first-child { background: #fff; color: #333; }
+	table tbody td:before {
+		content: attr(data-th); font-weight: bold;
+		display: inline-block; width: 8rem;
+	}
+	
+	
+	
+	table tfoot td{display:block; }
+	table tfoot td .btn{display:block;}
+	
+}

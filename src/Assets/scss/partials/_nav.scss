@@ -1,0 +1,82 @@
+.nav_bar{
+    width:100%;
+    color:white;
+    background:$primary-color;
+    position:absolute;
+    height: 6rem;
+}
+//code for the search bar
+
+
+#search-input {
+    display: inline-block;
+    margin: 0.8em;
+    width:30rem;
+    .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        margin-bottom: 0;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 30px;
+    }
+    button {
+        border:0;
+        background: none;
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -40px;
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color:$secondary-color;
+    }
+    
+}
+
+//code for the navigation
+
+ul{
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+            // &:hover{
+            //     background-color: skyblue;
+            //     text-decoration: none;
+            //     color: white;
+            // }
+            .active{
+                background-color:#5cb85c ;
+                text-decoration: none;
+
+                }
+            .link {
+                display: block;
+                text-decoration: none;
+                color: white;
+                text-align: center;
+                font-size:1em;
+                padding: 0.8em;
+                   
+                    &:hover:not(.active){
+                    text-decoration: none;
+                    background-color: skyblue;
+                    color: black;
+                    // border: 1px solid grey;
+                }
+               
+            }
+    }
+   
+}
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+// the page settings
+$primary-color :hsla(197, 100%, 46%, 0.226);
+$font-family:'Helvetica Neue', Arial, sans-serif;
+$secondary-color:#F05F40;
+$shadow-color:1px 3px 60px rgb(223, 242, 255);
+
+
+body {
+    font-family: 'Merriweather', $font-family;
+    font-size : 2rem;
+    cursor: default;
+  }
+  
+  
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Open Sans', $font-family; }
+  
+  
+  
+  .title{
+      text-align:center;
+  }
+
+  
+.message{
+    font-size:10rem;
+    text-align: center;
+        }
+        
+
+// style for the navigation 
+
+@import "./partials/nav";
+
+// style for the navigation 
+
+@import "./partials/header";
+
+// style of 'shop components'
+
+@import "./partials/shop";
+
+// style of 'Cart components'
+
+@import "./partials/cart";
+
+// style of 'main-movie.ejs'
+
+@import "./partials/items";
+
+// style for the navigation 
+
+@import "./partials/footer";
+

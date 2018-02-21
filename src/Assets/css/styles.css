@@ -1,0 +1,221 @@
+body {
+  font-family: "Merriweather", "Helvetica Neue", Arial, sans-serif;
+  font-size: 2rem;
+  cursor: default; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif; }
+
+.title {
+  text-align: center; }
+
+.message {
+  font-size: 10rem;
+  text-align: center; }
+
+.nav_bar {
+  width: 100%;
+  color: white;
+  background: rgba(0, 168, 235, 0.226);
+  position: absolute;
+  height: 6rem; }
+
+#search-input {
+  display: inline-block;
+  margin: 0.8em;
+  width: 30rem; }
+  #search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    margin-bottom: 0;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px; }
+  #search-input button {
+    border: 0;
+    background: none;
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -40px;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #F05F40; }
+
+ul {
+  list-style-type: none; }
+  ul li {
+    display: inline-block; }
+    ul li .active {
+      background-color: #5cb85c;
+      text-decoration: none; }
+    ul li .link {
+      display: block;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      font-size: 1em;
+      padding: 0.8em; }
+      ul li .link:hover:not(.active) {
+        text-decoration: none;
+        background-color: skyblue;
+        color: black; }
+
+.header {
+  padding-right: 4em;
+  width: 100%;
+  height: 40rem;
+  margin: 0;
+  background-color: transparent;
+  background: url(../WONDER-WOMEN-copy-08062017092206-1000x0.jpg) no-repeat;
+  padding-top: 15rem;
+  padding-bottom: calc(10rem - 56px);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-size: cover;
+  color: white; }
+  .header h1 {
+    color: white; }
+
+.title-page {
+  text-shadow: 1px 3px 60px #dff2ff; }
+
+.box {
+  padding: 5rem;
+  margin: 5rem 0; }
+
+.movie-box {
+  margin: 5rem 0; }
+
+.img {
+  width: 15rem;
+  height: 15rem; }
+
+.table > tbody > tr > td, .table > tfoot > tr > td {
+  vertical-align: middle; }
+
+.actions .btn {
+  margin: 1.5em; }
+
+.actions .btn-info {
+  display: inline-block; }
+
+.actions .btn-danger {
+  display: inline-block; }
+
+.btn-block {
+  width: 87%; }
+
+@media screen and (max-width: 1000px) {
+  tabletbody td .form-control {
+    display: inline !important; }
+  .actions .btn {
+    width: 36%;
+    margin: 1.5em 0; }
+  .btn-block {
+    width: 93%; }
+  .actions .btn-info {
+    float: left; }
+  .actions .btn-danger {
+    float: right; }
+  table thead {
+    display: none; }
+  table tbody td {
+    display: block;
+    padding: .6rem;
+    min-width: 320px; }
+  table tbody tr td:first-child {
+    background: #fff;
+    color: #333; }
+  table tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    width: 8rem; }
+  table tfoot td {
+    display: block; }
+  table tfoot td .btn {
+    display: block; } }
+
+.movie-title {
+  font-size: 2rem;
+  text-shadow: 1px 3px 60px #dff2ff; }
+
+.box1 {
+  padding: 5rem; }
+
+.col-md-6.bio-grid-left {
+  width: 50%;
+  float: left; }
+
+.col-md-6.bio-grid-right {
+  width: 50%; }
+  .col-md-6.bio-grid-right h3 {
+    font-size: 3em;
+    color: black;
+    letter-spacing: 2px;
+    font-family: 'Yanone Kaffeesatz', sans-serif; }
+  .col-md-6.bio-grid-right p {
+    color: black;
+    font-size: 1em;
+    line-height: 1.8em;
+    letter-spacing: 1px;
+    text-align: justify; }
+
+.bio-img {
+  text-align: center;
+  border: 5px solid rgba(238, 238, 238, 0.53);
+  height: auto;
+  padding: 2rem; }
+  .bio-img img {
+    width: 100%; }
+  .bio-img h3 {
+    color: black;
+    font-size: 2.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Raleway', sans-serif; }
+  .bio-img p {
+    color: #ffc53e;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+
+.bio-text {
+  text-align: center;
+  margin: 2rem; }
+  .bio-text p {
+    width: 100%; }
+
+.bio-grids {
+  padding: 5em 0 0 0; }
+
+.footer {
+  width: 100%;
+  color: white;
+  background: rgba(0, 168, 235, 0.226);
+  height: auto;
+  bottom: 0;
+  margin: 0;
+  padding: 1.5rem; }
+
+.middle_form {
+  vertical-align: center; }
+
+.btn {
+  margin: 2.5rem; }
+
+.btn-primary {
+  height: auto; }
