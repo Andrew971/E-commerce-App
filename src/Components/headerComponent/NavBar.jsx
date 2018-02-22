@@ -9,7 +9,7 @@ export default class NavBar extends Component {
         return (
             <nav className="nav_bar">
                 <div className="row">
-                    <div className="col-12 col-xs-9 col-md-6 col-lg-6" align="center">
+                    <div className="col-12 col-xs-6 col-md-6 col-lg-6" align="center">
 
                         <ul className="pull-left">
                             <li><Link className="link" to="/">Home</Link></li>
@@ -17,7 +17,7 @@ export default class NavBar extends Component {
                         </ul>
                     </div>
 
-                    <div className="col-12 col-xs-3 col-md-6 col-lg-6" align="center">
+                    <div className="col-12 col-xs-6 col-md-6 col-lg-6" align="center">
                         <ul className="pull-right">
                             <li><Link className="link" to="/login">Login</Link></li>
                             <li><Link className="link active" to="/cart">Cart({this.props.cart})</Link></li>
