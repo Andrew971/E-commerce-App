@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
 import img from '../../../Assets/img/beat-solo-2.png'
-
+import {
+    Link
+} from 'react-router-dom'
 export default class Shop extends Component {
 
 
     render() {
+        let {match}= this.props
 
         const List = this.props.shoes.map((shoe) => {
             let input
@@ -13,12 +16,12 @@ export default class Shop extends Component {
             return (<div key={shoe.key} className="col-4 col-md-4 col-lg-3" align="center">
 
                 <li className="media">
-                    <img className="img" src={img} alt={shoe.name} />
+                <Link to={match.url + '/'+ shoe.key}><img className="img" src={img} alt={shoe.name} /></Link>
 
                     <div className="media-body">
                         {shoe.name}
                     </div>
-                    <input type="number" className="form-control" ref={type => {
+                    <input type="number" min="1" className="form-control Quantity" ref={type => {
                         input = type;
                     }} onChange={(e) => {
                         e.preventDefault();

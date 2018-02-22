@@ -8,17 +8,18 @@ export default class ShopList extends Component {
 
 
     render() {
+        let {match}= this.props
         const List = this.props.data.map((list) => {
             let input
             return (<div key={list.key} className="col-4 col-md-4 col-lg-3" align="center">
 
                 <li className="media">
-                    <Link to={'/' + list.key}><img className="img" src={img} alt={list.name} /></Link>
+                    <Link to={match.url + '/'+ list.key}><img className="img" src={img} alt={list.name} /></Link>
 
                     <div className="media-body">
                         {list.name}
                     </div>
-                    <input type="number" className="form-control" ref={type => {
+                    <input type="number" min="1" className="form-control Quantity" ref={type => {
                         input = type;
                     }} onChange={(e) => {
                         e.preventDefault();

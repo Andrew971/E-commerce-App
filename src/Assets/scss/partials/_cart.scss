@@ -30,11 +30,10 @@
     .btn-block {
         width: 93%;
     }
-	.actions .btn-info{
-		float:left;
-	}
+	
 	.actions .btn-danger{
-		float:right;
+		// align:center;
+		display:inline;
 	}
 	
 	table thead { display: none; }

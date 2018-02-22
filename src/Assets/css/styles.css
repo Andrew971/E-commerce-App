@@ -90,16 +90,12 @@ ul {
 .title-page {
   text-shadow: 1px 3px 60px #dff2ff; }
 
-.box {
-  padding: 5rem;
-  margin: 5rem 0; }
-
-.movie-box {
-  margin: 5rem 0; }
-
 .img {
   width: 15rem;
   height: 15rem; }
+
+.Quantity {
+  width: 5rem; }
 
 .table > tbody > tr > td, .table > tfoot > tr > td {
   vertical-align: middle; }
@@ -124,10 +120,8 @@ ul {
     margin: 1.5em 0; }
   .btn-block {
     width: 93%; }
-  .actions .btn-info {
-    float: left; }
   .actions .btn-danger {
-    float: right; }
+    display: inline; }
   table thead {
     display: none; }
   table tbody td {

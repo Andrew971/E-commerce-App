@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Components/headerComponent/Header'
 import Footer from './Components/footerComponent/Footer'
+import NavBar from './Components/headerComponent/NavBar'
+
 import Home from './Components/pages/Home'
 import Shop from './Components/pages/Shop'
 import Cart from './Components/pages/Cart'
-import NavBar from './Components/headerComponent/NavBar'
+import Login from './Components/pages/Login'
+
+
 import {
   Route
 } from 'react-router-dom'
@@ -123,9 +127,12 @@ export default class App extends Component {
         <NavBar cart={this.state.cart.length} />
         <Header />
 
-        <Route exact path="/" render={() =>
-          <Home
+        <Route exact path="/login" render={() =>
+          <Login
             handler={this.handler.bind(this)} />
+        } />
+        <Route exact path="/" render={() =>
+          <Home />
         } />
         <Route path="/Shop" render={(routeProps) =>
           <Shop
@@ -135,7 +142,8 @@ export default class App extends Component {
             hats={this.state.hats}
             addShop={this.addShop.bind(this)}
             data={this.state.data}
-            username={this.state.username} />
+            username={this.state.username} 
+            />
         } />
         <Route path="/cart" render={() =>
           <Cart

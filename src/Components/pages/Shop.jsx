@@ -15,7 +15,6 @@ import {
 export default class Shop extends Component {
 
 
-
   render() {
    let { match } = this.props
     return (
@@ -41,9 +40,10 @@ export default class Shop extends Component {
                />
             } />
 
-            <Route path={match.url + '/:item'} render={() =>
+            <Route exact path={match.url + '/:id'} render={({match}) =>
               <SingleProduct 
               {...this.props}
+              match={match}
                />
             } />
           </Switch>

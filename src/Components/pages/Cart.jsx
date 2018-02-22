@@ -33,7 +33,7 @@ export default class Cart extends Component {
                         {item.product.price}
                     </td>
                     <td data-th="Quantity">
-                        <input type="number" className="form-control col-md-12" ref={type => {
+                        <input type="number" min="1" className="form-control col-md-12" ref={type => {
                             input = type;
                         }} onChange={(e) => {
                             e.preventDefault();
