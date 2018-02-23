@@ -47,10 +47,3 @@ router.get('/', (req, res) => {
 
 module.exports = router
 
-
-{username 
-password 
- {
-   cart:[]
- }
-}

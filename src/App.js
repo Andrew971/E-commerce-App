@@ -23,7 +23,7 @@ export default class App extends Component {
       shoes: [],
       hats: [],
       cart: [],
-      total: 2,
+      total: 0,
       username: ''
     }
     this.apiUrl = 'http://localhost:8080/cart'
