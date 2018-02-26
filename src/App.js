@@ -72,6 +72,8 @@ export default class App extends Component {
     const product = this.state.data.find((item) => {
       return item.key === art.key
     })
+
+    
     axios.post(this.apiUrl, { product, quantity: input, subtotal: product.price * Number(input) })
       .then((res) => {
         let Total = res.data.reduce((memo, val) => {

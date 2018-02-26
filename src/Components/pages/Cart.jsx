@@ -5,10 +5,6 @@ import {
 } from 'react-router-dom'
 
 export default class Cart extends Component {
-   
-
-
-
 
     render() {
         
